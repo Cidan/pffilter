@@ -18,11 +18,12 @@ jobs:
 
       - name: Get List
         run: go run main.go
-
+      - name: Compress file
+        run: gzip -9 /tmp/pffilter/bad_sites.conf
       - name: Package List
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
-          files: /tmp/pffilter/bad_sits.conf
+          files: /tmp/pffilter/bad_sites.conf.gz
