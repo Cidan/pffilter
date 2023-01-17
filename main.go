@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
-	//GetDisallowList()
-	//ExtractList()
+	GetDisallowList()
+	ExtractList()
 	categories := GetAllCategories()
 	CreateFirewallConfig(categories, "/tmp/pffilter/bad_sites.conf")
 
